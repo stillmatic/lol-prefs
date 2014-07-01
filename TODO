@@ -1,4 +1,12 @@
 TODO
-- disable add/remove buttons if their input is invalid
+
+CONTENT
+- preferred buildpaths
 - require username
+- content view (interpret json)
+- contact modal
+- user lookup
+
+VISUAL
+- disable add/remove buttons if their input is invalid
 - add https://github.com/benplum/Selecter

@@ -9,8 +9,7 @@
     min-height: 100%;
 }
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     background-image: url('../assets/bgpattern.jpg');
     background-repeat: repeat;
 }
@@ -20,7 +19,8 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    background-color: rgba(46, 37, 80, 0.1);
+    /*background-color: rgba(44, 62, 80, 0.3);*/
+    background-color: rgba(115, 179, 216, 0.2)
 }
 body > .container {
     padding: 60px 15px 0;
@@ -34,15 +34,43 @@ body > .container {
     font-weight: bold;
     color: #18bc9c;
 }
-#rowthree {
-    border:1px dotted;
+#regionSelect {
+
+}
+#input-fields {
+    padding:10px;
+    padding-bottom:15px;
+    background-color: rgba(115, 179, 216, 0.2);
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 }
 #submit {
     text-align:center;
-    padding-bottom: 20px;
+}
+#uname {
+    padding-bottom:10px;
+}
+#regionBox {
+    text-align:center;
+}
+#regionSelect {
+    width:100px;
 }
 #laneCap {
     text-align: center;
+}
+#feature-left, #feature-mid, #feature-right {
+    min-height: 150px;
+    padding-top:10px;
+}
+#features {
+    background-color:#E1CCB3;
+}
+#rowTwo {
+    padding-bottom: -20px;
+}
+#rowThree {
+    padding-top:-20px;
 }
 .textarea {
     overflow: auto;
@@ -52,9 +80,11 @@ h3 {
     text-align:center;
     letter-spacing:2px;
 }
-.row {
-
-    padding-bottom: 5px;
+hr {
+    border-top-color:#2c3e50;
+}
+.pick {
+    width: 204px;
 }
 .subtitle {
     padding-top:5px;
@@ -65,6 +95,10 @@ h3 {
 .chBtn {
     margin-left:auto;
     margin-right:auto;
+}
+.feature-title {
+    text-align:center;
+    font-weight:bold;
 }
 /* reorderable list */
  .lane-list

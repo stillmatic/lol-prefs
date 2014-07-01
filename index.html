@@ -3,9 +3,10 @@
 <head>
     <title>LoL Preferences - Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/theme.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,11 +24,17 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a>
+                    <li class="active">
+                        <a href="#">
+                            <span class="fa fa-home"></span> Home</a>
                     </li>
-                    <li><a href="about.html">About</a>
+                    <li>
+                        <a href="about.html">
+                            <span class="fa fa-question-circle"></span> About</a>
                     </li>
-                    <li><a href="#contact">Contact</a>
+                    <li>
+                        <a href="#contact">
+                            <span class="fa fa-envelope"></span> Contact</a>
                     </li>
                 </ul>
             </div>
@@ -36,84 +43,103 @@
 
     <!-- page content -->
     <div class="container" id="body-box">
-        <div class="page-header" >
+        <div class="page-header">
             <h1>Your picks and bans savior.</h1>
-            <p>Easily share your gameplan and playstyle with your teammates. Reduce miscommunication and make League a better game. Get started just by typing in your League summoner name. </p>
         </div>
-        <div class="row" id="rowtwo">
-            <div class="col-md-4 col-md-offset-4" id="uname">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Easily share your gameplan and playstyle with your teammates. Reduce miscommunication and make League a better game.</p>
+                <p>Get started by just typing in your League summoner name.</p>
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="rowTwo">
+        <div class="row bg-primary">
+            <div class="col-md-4 col-md-offset-3" id="uname">
                 <h3>Username</h3>
-                <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="fa fa-user fa-fw"></span>
+                    </span>
                     <input type="text" class="form-control" data-bind='value: username' id="inputSuccess2">
                 </div>
             </div>
-        </div>
-        <div class="row" id="rowthree">
-            <div class="col-md-4" id="lanes">
-                <h3>Preferred Lanes</h3>
-                <label class="subtitle" id="laneCap">Drag and drop in your desired order:</label>
-                <div class="lane-list" data-bind="foreach: lanes, sortable: lanes">
-                    <div class="lane-item" data-bind="text: $data"></div>
-                </div>
+            <div class="col-md-2" id="regionBox">
+                <h3>Region:</h3>
+                <select id="regionSelect" class="input-group-addon form-control" data-bind="options: availableRegions, value: region"></select>
             </div>
-            <div class="col-md-4" id="picks">
-                <h3>Favorite Champs</h3>
-                <form class="form-inline form-horizontal" role="form">
-                    <div class="form-group">
-                        <label for="addPick" class="subtitle">Add a pick:</label>
-                        <input class="form-control" id="addPick" data-bind="jqAuto: { source: allChamps, value: champToFav}"></input>
-                        <button class="btn btn-default btn-sm" data-bind="click: addFav">Add</button>
-                    </div>
-                </form>
-                <form class="form-inline form-horizontal" role="form">
-                    <div class="form-group">
-                        <label for="remPick" class="subtitle">Your picks:</label>
-                        <select class="form-control" id="remPick" style="width:204px" multiple="multiple" height="5" data-bind="options:picks, selectedOptions:selPicks"></select>
-                        <button class="btn btn-danger btn-sm" data-bind="click: removeFav, enable: selPicks().length > 0">Remove</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4" id="bans">
-                <h3>Ban Requests</h3>
-                <form class="form-inline form-horizontal" role="form">
-                    <div class="form-group">
-                        <label for="plusBan" class="subtitle">Add a ban:</label>
-                        <input class="form-control" id="plusBan" data-bind="jqAuto: { source: allChamps, value: champToBan}"></input>
-                        <button class="btn btn-default btn-sm" data-bind="click: addBan">Add</button>
-                    </div>
-                </form>
-                <form class="form-inline form-horizontal" role="form">
-                    <div class="form-group">
-                        <label for="remBan" class="subtitle">Your bans:</label>
-                        <select id="remBan" class="form-control" style="width:204px" multiple="multiple" height="5" data-bind="options:bans, selectedOptions:selBans"></select>
-                        <button class="btn btn-danger btn-sm" data-bind="click: removeBan, enable: selBans().length > 0">Remove</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-    <div class="row">
-        <div class="col-md-6" id="notes">
-            <h3>Additional Notes</h3>
-            <textarea rows="3" id="notesArea" data-bind="value: notes" class="form-control"></textarea>
-        </div>
-
-        <div class="col-md-6" id="submit">
-            <h3>Submit</h3>
-            <label class="subtitle">Click to save and submit:</label>
-            <br />
-            <button class="btn btn-primary" id="subBut">Submit</button>
-            <!--TODO: Check for username -> convert to JSON-->
         </div>
     </div>
-    <!--JSON
+    <div class="container" id="rowThree">
+        <div id="input-fields">
+            <div class="row">
+                <div class="col-md-4" id="lanes">
+                    <h3>Preferred Lanes</h3>
+                    <label class="subtitle" id="laneCap">Drag and drop in your desired order:</label>
+                    <div class="lane-list" data-bind="foreach: lanes, sortable: lanes">
+                        <div class="lane-item" data-bind="text: $data"></div>
+                    </div>
+                </div>
+                <div class="col-md-4" id="picks">
+                    <h3>Favorite Champs</h3>
+                    <form class="form-inline form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="addPick" class="subtitle">Add a pick:</label>
+                            <input class="form-control" id="addPick" data-bind="jqAuto: { source: allChamps, value: champToFav}"></input>
+                            <button class="btn btn-primary btn-sm" data-bind="click: addFav">Add</button>
+                        </div>
+                    </form>
+                    <hr />
+                    <form class="form-inline form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="remPick" class="subtitle">Your picks:</label>
+                            <select class="form-control pick" id="remPick" style="width:204px" multiple="multiple" height="5" data-bind="options:picks, selectedOptions:selPicks"></select>
+                            <button class="btn btn-danger btn-sm" data-bind="click: removeFav, enable: selPicks().length > 0">Remove</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4" id="bans">
+                    <h3>Ban Requests</h3>
+                    <form class="form-inline form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="plusBan" class="subtitle">Add a ban:</label>
+                            <input class="form-control" id="plusBan" data-bind="jqAuto: { source: allChamps, value: champToBan}"></input>
+                            <button class="btn btn-primary btn-sm" data-bind="click: addBan">Add</button>
+                        </div>
+                    </form>
+                    <hr />
+                    <form class="form-inline form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="remBan" class="subtitle">Your bans:</label>
+                            <select id="remBan" class="form-control" style="width:204px" multiple="multiple" height="5" data-bind="options:bans, selectedOptions:selBans"></select>
+                            <button class="btn btn-danger btn-sm" data-bind="click: removeBan, enable: selBans().length > 0">Remove</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6" id="notes">
+                    <h3>Additional Notes</h3>
+                    <textarea rows="3" id="notesArea" data-bind="value: notes" class="form-control"></textarea>
+                </div>
+
+                <div class="col-md-6" id="submit">
+                    <h3>Submit</h3>
+                    <label class="subtitle">Click to save and submit:</label>
+                    <br />
+                    <button class="btn btn-success" id="subBut">Submit</button>
+                </div>
+            </div>
+        </div>
+        <!--JSON
         <p>-----</p>
         <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>-->
-    <!--footer-->
+        <!--footer-->
     </div>
 
     <div class="footer">
-
         <div class="container-fluid">
             <div class="container">
                 <p>Made by Chris Hua.</p>
