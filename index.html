@@ -1,7 +1,9 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>LoL Preferences - Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -86,7 +88,7 @@
                     <form class="form-inline form-horizontal" role="form">
                         <div class="form-group">
                             <label for="addPick" class="subtitle">Add a pick:</label>
-                            <input class="form-control" id="addPick" data-bind="jqAuto: { source: allChamps, value: champToFav}"></input>
+                            <input class="form-control" id="addPick" data-bind="jqAuto: { source: allChamps, value: champToFav}">
                             <button class="btn btn-primary btn-sm" data-bind="click: addFav">Add</button>
                         </div>
                     </form>
@@ -94,7 +96,7 @@
                     <form class="form-inline form-horizontal" role="form">
                         <div class="form-group">
                             <label for="remPick" class="subtitle">Your picks:</label>
-                            <select class="form-control pick" id="remPick" style="width:204px" multiple="multiple" height="5" data-bind="options:picks, selectedOptions:selPicks"></select>
+                            <select class="form-control pick" id="remPick" style="width:204px" multiple="multiple" data-bind="options:picks, selectedOptions:selPicks"></select>
                             <button class="btn btn-danger btn-sm" data-bind="click: removeFav, enable: selPicks().length > 0">Remove</button>
                         </div>
                     </form>
@@ -104,7 +106,7 @@
                     <form class="form-inline form-horizontal" role="form">
                         <div class="form-group">
                             <label for="plusBan" class="subtitle">Add a ban:</label>
-                            <input class="form-control" id="plusBan" data-bind="jqAuto: { source: allChamps, value: champToBan}"></input>
+                            <input class="form-control" id="plusBan" data-bind="jqAuto: { source: allChamps, value: champToBan}">
                             <button class="btn btn-primary btn-sm" data-bind="click: addBan">Add</button>
                         </div>
                     </form>
@@ -112,7 +114,7 @@
                     <form class="form-inline form-horizontal" role="form">
                         <div class="form-group">
                             <label for="remBan" class="subtitle">Your bans:</label>
-                            <select id="remBan" class="form-control" style="width:204px" multiple="multiple" height="5" data-bind="options:bans, selectedOptions:selBans"></select>
+                            <select id="remBan" class="form-control" style="width:204px" multiple="multiple" data-bind="options:bans, selectedOptions:selBans"></select>
                             <button class="btn btn-danger btn-sm" data-bind="click: removeBan, enable: selBans().length > 0">Remove</button>
                         </div>
                     </form>
@@ -134,7 +136,6 @@
             </div>
         </div>
         <!--JSON
-        <p>-----</p>
         <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>-->
         <!--footer-->
     </div>

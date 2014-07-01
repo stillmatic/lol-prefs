@@ -32,7 +32,7 @@ function AppViewModel() {
     this.addBan = function() {
         tc = this.champToBan();
         if ((tc != "") && (this.bans.indexOf(tc) < 0)) {
-            if (allChamps.indexOf(tc) > 0) {
+            if (allChamps.indexOf(tc) > -1) {
                 this.bans.push(tc);
             } else {
                 alert("Invalid Champ Name");
