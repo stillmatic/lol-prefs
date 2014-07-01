@@ -3,10 +3,9 @@
 <head>
     <title>LoL Preferences - Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/theme.css" rel="stylesheet">
-    <link href="bootstrap.css" rel="stylesheet">
-    <link href="assets/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,27 +31,21 @@
                     </li>
                 </ul>
             </div>
-            <!--/.nav-collapse -->
         </div>
     </div>
 
     <!-- page content -->
-    <div class="container">
-        <div class="page-header">
+    <div class="container" id="body-box">
+        <div class="page-header" >
             <h1>Your picks and bans savior.</h1>
-            <p>Easily share your gameplan and playstyle with your teammates. Reduce miscommunication and make League a better game. </p>
+            <p>Easily share your gameplan and playstyle with your teammates. Reduce miscommunication and make League a better game. Get started just by typing in your League summoner name. </p>
         </div>
         <div class="row" id="rowtwo">
             <div class="col-md-4 col-md-offset-4" id="uname">
                 <h3>Username</h3>
-                <div class="form-group has-success">
+                <div class="form-group">
                     <input type="text" class="form-control" data-bind='value: username' id="inputSuccess2">
                 </div>
-                <!--
-                <div class="form-group has-error">
-                    <input type="text" class="form-control" data-bind='value: username' id="inputError2">
-                </div>
-                -->
             </div>
         </div>
         <div class="row" id="rowthree">
@@ -102,7 +95,7 @@
     <div class="row">
         <div class="col-md-6" id="notes">
             <h3>Additional Notes</h3>
-            <textarea rows="3" data-bind="value: notes" class="form-control"></textarea>
+            <textarea rows="3" id="notesArea" data-bind="value: notes" class="form-control"></textarea>
         </div>
 
         <div class="col-md-6" id="submit">
@@ -133,11 +126,11 @@
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-    <script src="http://knockoutjs.com/downloads/knockout-3.1.0.debug.js"></script>
-    <script src="https://rawgit.com/rniemeyer/knockout-sortable/master/build/knockout-sortable.js"></script>
-    <script src="assets/jquery-ui.min.js"></script>
-    <script src="knockout-jqAutocomplete.js"></script>
-    <script src="prefs.js"></script>
+    <script src="js/knockout-3.1.0.js"></script>
+    <script src="js/knockout-sortable.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/knockout-jqAutocomplete.js"></script>
+    <script src="js/prefs.js"></script>
 </body>
 
 </html>
