@@ -9,6 +9,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/jquery-ui.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -51,7 +52,7 @@
         <div class="row">
             <div class="col-md-12">
                 <p>Easily share your gameplan and playstyle with your teammates. Reduce miscommunication and make League a better game.</p>
-                <p>Get started by just typing in your League summoner name.</p>
+                <p>Get started by just typing in your League summoner name, or, <strong><a href="lookup.html">look up another user.</a></strong></p>
                 <br />
             </div>
         </div>
@@ -74,7 +75,7 @@
         </div>
     </div>
     <div class="container" id="rowThree">
-        <div id="input-fields">
+        <div id="input-fields" data-bind="visible: username().length > 0">
             <div class="row">
                 <div class="col-md-4" id="lanes">
                     <h3>Preferred Lanes</h3>
@@ -135,11 +136,11 @@
                 </div>
             </div>
         </div>
-        <!--JSON
+        <!--JSON-
         <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>-->
-        <!--footer-->
+        
     </div>
-
+<!--footer-->
     <div class="footer">
         <div class="container-fluid">
             <div class="container">
